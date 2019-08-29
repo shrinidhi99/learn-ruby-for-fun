@@ -74,3 +74,134 @@ loop do
   puts x
   break if x >= 10
 end
+
+y = 1
+while y <= 10
+  y += 1
+  next unless y.even?
+  puts y
+end
+
+a = 1
+until a >= 10
+  a += 1
+  next unless y.even?
+  puts a
+end
+
+numbers = [1, 2, 3, 4, 5]
+
+for number in numbers
+  puts "#{number}, " # prints the numbers on different lines
+end
+
+for number in numbers
+  print "#{number}, " # prints the numbers on the same line, can be written as "#{number}, " also
+end
+
+
+groceries = %w[bananas rice wheat noodles] # another way of writing an array
+
+groceries.each do |food|
+  puts "Get Some #{food}"
+end
+
+(0..5).each do |i|
+  puts "# #{i}"
+end
+
+def add_nums(num_1, num_2)
+  return num_1.to_i + num_2.to_i
+end
+
+puts add_nums(3, 4)
+
+x = 1
+
+def change_x(x)
+  x = 4
+end
+
+change_x(x)
+
+puts "x = #{x}"
+
+print 'Enter a number: '
+first_num = gets.to_i
+print 'Enter another number: '
+second_num = gets.to_i
+
+begin
+  answer = first_num.to_f / second_num.to_f
+
+rescue
+  puts "You can't divide by zero"
+  exit
+end
+
+puts "#{first_num} / #{second_num} = #{answer}"
+
+age = 12
+
+def check_age(age)
+  raise ArgumentError, 'Enter Positive Number' unless age.positive?
+end
+
+begin
+  check_age(-1)
+rescue ArgumentError
+  puts 'That is an impossible age'
+end
+
+puts 'Add them #{4 + 5} \n\n'
+puts "Add them #{4 + 5} \n\n"
+
+multiline_string = <<~EOM
+  This is a very long string
+  that contains interpolation
+  like #{4 + 5} \n\n
+EOM
+puts multiline_string
+
+first_name = 'Derek'.to_s
+last_name = 'Root'.to_s
+
+full_name = first_num.to_s + last_name.to_s
+middle_name = 'Roy'
+
+full_name = "#{first_name} #{middle_name} #{last_name}"
+
+puts full_name.include?('Roy')
+
+puts full_name.size
+
+puts 'Vowels : ' + full_name.count('aeiou').to_s
+puts 'Consonants : ' + full_name.count('^aeiou').to_s
+
+puts full_name.start_with?('Derek')
+puts 'Index : ' + full_name.index('Root').to_s
+puts full_name.to_s
+
+puts full_name.equal? full_name
+puts full_name.swapcase
+puts full_name.downcase
+puts full_name.upcase
+
+name = '    '.to_s + full_name.to_s
+name = name.lstrip
+name = name.rstrip
+name = name.strip
+
+puts name.rjust(20, '.')
+puts name.ljust(20, '.')
+puts name.center(20, '.')
+
+puts name.chop
+puts name.chomp('ot')
+
+puts name.delete('a')
+
+name_array = name.split(//)
+puts name_array
+name_array = name.split(/ /)
+puts name_array
