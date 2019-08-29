@@ -59,6 +59,18 @@ when 'French', 'french'
 when 'Spanish', 'spanish'
   puts 'Hola'
   exit
-else 'English'
-     puts 'Hello'
+else
+  'English'
+  puts 'Hello'
+end
+
+age = 12
+puts age >= 50 ? 'Old' : 'Young'
+
+x = 1
+loop do
+  x += 1
+  next unless x.even? # x%2 == 0
+  puts x
+  break if x >= 10
 end
