@@ -51,3 +51,4 @@ end
 max = GermanShepard.new
 max.name = 'Max'
 printf "%s goes %s\n", max.name, max.bark
+
